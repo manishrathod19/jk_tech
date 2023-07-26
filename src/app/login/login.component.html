@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <h1 class="h3 mb-3 fw-normal">Login</h1>
+    
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="user_name" id="name" placeholder="User Name" maxlength="20">
+          <label for="name">User Name</label>
+          <div class="warning" *ngIf="(loginForm.controls.user_name.invalid && (loginForm.controls.user_name.dirty || loginForm.controls.user_name.touched) && loginForm.controls.user_name.errors?.['required'])">User name is required</div>
+        </div>
+        
+        <div class="form-floating">
+          <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+          <label for="password">Password</label>
+          <div class="warning" *ngIf="(loginForm.controls.password.invalid && (loginForm.controls.password.dirty || loginForm.controls.password.touched) && loginForm.controls.password.errors?.['required'])">Password is required</div>
+        </div>
+        
+        <button [disabled]="loginForm.status === 'INVALID'" [ngClass]="{'disabled-cursor': loginForm.status === 'INVALID'}" class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      </form>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
