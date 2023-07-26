@@ -1,9 +1,10 @@
-<div class="container-fluid">
+<div class="container-fluid" style="background-color: #eeeeee; min-height: 841px;">
   <div class="row">
     <div class="col-4"></div>
     <div class="col-4">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
-        <h1 class="h3 mb-3 fw-normal">Login</h1>
+        <h1 class="h3 mb-3 fw-normal" style="text-align: center; margin-top: 20px;">Welcome to JK Tech</h1>
+        <h1 class="h3 mb-3 fw-normal" style="text-align: center; margin-top: 20px;">Login</h1>
     
         <div class="form-floating">
           <input type="text" class="form-control" formControlName="user_name" id="name" placeholder="User Name" maxlength="20">
